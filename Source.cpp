@@ -23,49 +23,49 @@ int main()
 	std::cin >> num;
 	while (num != 0)
 	{
-		mounths mounth = static_cast<mounths>(num);
-		if (num > 12)
+		if (num > 12 || num < 1)  // Проверяю, лежимт ли значение num в нужном диапазоне 
 		{
-			std::cout << "Ошибка! Месяцев всего 12" << std::endl;
+			std::cout << "Ошибка! Месяцев всего 12, нумерация начинается с 1. Введите другой номер" << std::endl;
 		}
 		else
 		{
-			switch (num)
+			mounths mounth = static_cast<mounths>(num); // Теперь преобразование в тип mounths выполняется после проверки num
+			switch (mounth)
 			{
-			case 1: 
+			case mounths::January:
 				std::cout << "January" << std::endl;
 				break;
-			case 2: 
+			case mounths::Feruary:
 				std::cout << "February" << std::endl;
 				break;
-			case 3: 
+			case mounths::March:
 				std::cout << "March" << std::endl;
 				break;
-			case 4: 
+			case mounths::April:
 				std::cout << "April" << std::endl;
 				break;
-			case 5: 
+			case mounths::May:
 				std::cout << "May" << std::endl;
 				break;
-			case 6: 
+			case mounths::June:
 				std::cout << "June" << std::endl;
 				break;
-			case 7: 
+			case mounths::July:
 				std::cout << "July" << std::endl;
 				break;
-			case 8: 
+			case mounths::August:
 				std::cout << "August" << std::endl;
 				break;
-			case 9: 
+			case mounths::September:
 				std::cout << "September" << std::endl;
 				break;
-			case 10: 
+			case mounths::October:
 				std::cout << "October" << std::endl;
 				break;
-			case 11: 
+			case mounths::November:
 				std::cout << "November" << std::endl;
 				break;
-			case 12: 
+			case mounths::December:
 				std::cout << "December" << std::endl;
 				break;
 			}
